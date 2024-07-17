@@ -1,12 +1,16 @@
 ## Changelog
 
+### v5.0.4
+
+fix: Scrollbar height
+
 ### v5.0.3
 
-Update documentation
+update: Documentation
 
 ### v5.0.2
 
-Update description and plugins.json meta
+update: Description and plugins.json meta
 
 ### v5.0.1
 
