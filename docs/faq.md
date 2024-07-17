@@ -21,6 +21,6 @@ __How long this plugin will be maintained ?__
 
 As long as possible, I have many project to maintain, I'm the first user of this plugin and I use Matomo on many project, if I see errors, I'll patch this plugin faster as possible !
 
-__What does this plugin do?__
+__How to use this plugin?__
 
-It allows you to generate a OpenAPI standard documentation for Matomo API based on your configuration.
+To use this plugin, please visit [AskYourDatabase](https://www.askyourdatabase.com/) and create an account. You will receive your credentials upon registration.

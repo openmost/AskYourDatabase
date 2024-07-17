@@ -1,5 +1,9 @@
 ## Changelog
 
+### v5.0.7
+
+update: Documentation
+
 ### v5.0.6
 
 update: Remove search bar from view
