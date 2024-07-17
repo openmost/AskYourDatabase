@@ -21,6 +21,13 @@ class Menu extends \Piwik\Plugin\Menu
 {
     public function configureTopMenu(MenuTop $menu)
     {
-        $menu->addItem('AskYourDatabase', null, $this->urlForDefaultAction(), $orderId = 30);
+        $systemSettings = new SystemSettings();
+
+        if ($systemSettings->secretKey->getValue()
+            && $systemSettings->name->getValue()
+            && $systemSettings->email->getValue()) {
+
+            $menu->addItem('AskYourDatabase', null, $this->urlForDefaultAction(), $orderId = 30);
+        }
     }
 }

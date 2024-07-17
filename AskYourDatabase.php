@@ -11,18 +11,5 @@ namespace Piwik\Plugins\AskYourDatabase;
 
 class AskYourDatabase extends \Piwik\Plugin
 {
-    public function registerEvents()
-    {
-        return [
-            'CronArchive.getArchivingAPIMethodForPlugin' => 'getArchivingAPIMethodForPlugin',
-        ];
-    }
 
-    // support archiving just this plugin via core:archive
-    public function getArchivingAPIMethodForPlugin(&$method, $plugin)
-    {
-        if ($plugin == 'AskYourDatabase') {
-            $method = 'AskYourDatabase.getExampleArchivedMetric';
-        }
-    }
 }
