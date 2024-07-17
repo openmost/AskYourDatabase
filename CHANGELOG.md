@@ -1,5 +1,9 @@
 ## Changelog
 
+### v5.0.3
+
+Update documentation
+
 ### v5.0.2
 
 Update description and plugins.json meta
