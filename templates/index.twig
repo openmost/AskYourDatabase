@@ -3,6 +3,10 @@
     {% block content %}
 
         <style>
+            .top_controls {
+                display: none;
+            }
+
             #root {
                 margin-bottom: 0;
             }
@@ -10,9 +14,16 @@
             #pageFooter {
                 display: none;
             }
+
+            #ask-your-database-output {
+                margin-top: 1.125rem;
+                width: 100%;
+                height: 800px;
+                max-height: calc(100vh - 100px);
+            }
         </style>
 
-        <iframe id="ask-your-database-output" src="" width="100%" height="800" style="max-height: calc(100vh - 154px)">
+        <iframe id="ask-your-database-output" src="" width="100%" height="800" loading="lazy">
             Please provide credentials in the Matomo admin area
         </iframe>
 

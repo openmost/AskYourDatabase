@@ -1,5 +1,9 @@
 ## Changelog
 
+### V5.0.5
+
+update: Remove search bar from view
+
 ### v5.0.4
 
 fix: Scrollbar height
