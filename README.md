@@ -2,5 +2,5 @@
 
 ## Description
 
-Add your plugin description here.
+This is the AskYourDatabase plugin connector for Matomo.
 

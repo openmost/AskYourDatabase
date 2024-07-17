@@ -11,7 +11,7 @@ This plugin is available in the official marketplace of Matomo. You have to inst
 
 __Is the plugin active for all Matomo users in my instance ?__
 
-No, only Super Users will have access to Swagger
+No, **only Super Users** will have access to AskYourDatabase
 
 __How can I contribute to this plugin ?__
 

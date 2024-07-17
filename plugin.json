@@ -1,7 +1,7 @@
 {
     "name": "AskYourDatabase",
     "description": "Connect the AskYourDatabase service to Matomo",
-    "version": "5.0.1",
+    "version": "5.0.2",
     "theme": false,
     "require": {
         "matomo": ">=5.0.0-stable,<6.0.0-b1"
@@ -15,10 +15,10 @@
     ],
     "support": {
         "email": "ronan@openmost.io",
-        "issues": "https:\/\/github.com\/openmost\/Swagger\/issues",
-        "source": "https:\/\/github.com\/openmost\/Swagger"
+        "issues": "https:\/\/github.com\/openmost\/AskYourDatabase\/issues",
+        "source": "https:\/\/github.com\/openmost\/AskYourDatabase"
     },
-    "homepage": "https:\/\/openmost.io\/products\/swagger\/",
+    "homepage": "https:\/\/openmost.io\/products\/askyourdatabase\/",
     "license": "GPL v3+",
     "keywords": [
         "ask",
