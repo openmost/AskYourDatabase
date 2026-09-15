@@ -1,0 +1,25 @@
+{
+    "AskYourDatabase": {
+        "PluginDescription": "Chat with your data in Matomo using your AskYourDatabase AI chatbot.",
+        "ApiKey": "API key",
+        "ApiKeyDescription": "API key created in the API Key page of your AskYourDatabase dashboard. The secret key used by the previous versions of the plugin no longer works.",
+        "ChatbotId": "Chatbot ID",
+        "ChatbotIdDescription": "ID of the chatbot to display, found in its URL in your AskYourDatabase dashboard (for example https://www.askyourdatabase.com/dashboard/chatbot/5da7b8cf3a372f5e6e6b64af9ae189c7). You can paste the full URL.",
+        "ChatbotIdInvalid": "The chatbot ID is not valid. Paste the ID or the URL of the chatbot from your AskYourDatabase dashboard.",
+        "UserName": "Name",
+        "UserNameDescription": "Name used for the chat sessions in AskYourDatabase. Leave empty to use the login of the Matomo user.",
+        "UserEmail": "Email",
+        "UserEmailDescription": "Email used for the chat sessions in AskYourDatabase. Leave empty to use the email of the Matomo user.",
+        "NotConfigured": "AskYourDatabase is not configured yet",
+        "NotConfiguredDescription": "Enter the API key and the chatbot ID of your AskYourDatabase account in the plugin settings to start chatting with your data.",
+        "NotConfiguredNoAccount": "No account yet? Create one on %1$sAskYourDatabase%2$s.",
+        "GoToSettings": "Configure AskYourDatabase",
+        "SessionError": "The AskYourDatabase session could not be created: %s",
+        "RequestFailed": "AskYourDatabase could not be reached.",
+        "CredentialsRefused": "the API key or the chatbot ID was refused (%s). Check them in the plugin settings.",
+        "UnexpectedResponse": "AskYourDatabase returned an unexpected response (HTTP %s).",
+        "Retry": "Retry",
+        "Loading": "Opening AskYourDatabase...",
+        "ChatbotFrameTitle": "AskYourDatabase chatbot"
+    }
+}

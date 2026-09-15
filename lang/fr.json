@@ -1,0 +1,25 @@
+{
+    "AskYourDatabase": {
+        "PluginDescription": "Discutez avec vos données dans Matomo grâce à votre chatbot IA AskYourDatabase.",
+        "ApiKey": "Clé API",
+        "ApiKeyDescription": "Clé API créée dans la page API Key de votre tableau de bord AskYourDatabase. La clé secrète utilisée par les versions précédentes du plugin ne fonctionne plus.",
+        "ChatbotId": "ID du chatbot",
+        "ChatbotIdDescription": "ID du chatbot à afficher, présent dans son URL dans votre tableau de bord AskYourDatabase (par exemple https://www.askyourdatabase.com/dashboard/chatbot/5da7b8cf3a372f5e6e6b64af9ae189c7). Vous pouvez coller l'URL complète.",
+        "ChatbotIdInvalid": "L'ID du chatbot n'est pas valide. Collez l'ID ou l'URL du chatbot depuis votre tableau de bord AskYourDatabase.",
+        "UserName": "Nom",
+        "UserNameDescription": "Nom utilisé pour les sessions de chat dans AskYourDatabase. Laissez vide pour utiliser l'identifiant de l'utilisateur Matomo.",
+        "UserEmail": "Email",
+        "UserEmailDescription": "Email utilisé pour les sessions de chat dans AskYourDatabase. Laissez vide pour utiliser l'email de l'utilisateur Matomo.",
+        "NotConfigured": "AskYourDatabase n'est pas encore configuré",
+        "NotConfiguredDescription": "Renseignez la clé API et l'ID du chatbot de votre compte AskYourDatabase dans les réglages du plugin pour commencer à discuter avec vos données.",
+        "NotConfiguredNoAccount": "Pas encore de compte ? Créez-en un sur %1$sAskYourDatabase%2$s.",
+        "GoToSettings": "Configurer AskYourDatabase",
+        "SessionError": "La session AskYourDatabase n'a pas pu être créée : %s",
+        "RequestFailed": "AskYourDatabase n'a pas pu être contacté.",
+        "CredentialsRefused": "la clé API ou l'ID du chatbot a été refusé (%s). Vérifiez-les dans les réglages du plugin.",
+        "UnexpectedResponse": "AskYourDatabase a renvoyé une réponse inattendue (HTTP %s).",
+        "Retry": "Réessayer",
+        "Loading": "Ouverture d'AskYourDatabase...",
+        "ChatbotFrameTitle": "Chatbot AskYourDatabase"
+    }
+}

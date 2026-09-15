@@ -1,6 +1,6 @@
 <?php
 
-return array(
+return [
     \Piwik\View\SecurityPolicy::class => \Piwik\DI::decorate(function ($previous) {
         /** @var \Piwik\View\SecurityPolicy $previous */
 
@@ -8,7 +8,8 @@ return array(
             return $previous;
         }
 
-        $previous->addPolicy('frame-src', 'www.askyourdatabase.com');
+        // The chatbot is embedded in an iframe
+        $previous->addPolicy('frame-src', \Piwik\Plugins\AskYourDatabase\SessionClient::ORIGIN);
         return $previous;
     }),
-);
+];
