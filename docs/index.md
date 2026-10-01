@@ -48,5 +48,5 @@ Only super users can see the menu and open the chatbot, as it can read the conne
 
 ### Requirements
 
-- Matomo 5
+- Matomo 5.10.0 or later
 - Outgoing HTTPS requests from your Matomo server to `www.askyourdatabase.com`
