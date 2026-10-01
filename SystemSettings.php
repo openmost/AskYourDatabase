@@ -9,22 +9,19 @@
 
 namespace Piwik\Plugins\AskYourDatabase;
 
-use Piwik\Settings\Setting;
+use Piwik\Piwik;
 use Piwik\Settings\FieldConfig;
+use Piwik\Settings\Setting;
+use Piwik\Validators\Email;
 use Piwik\Validators\NotEmpty;
 
-/**
- * Defines Settings for AskYourDatabase.
- *
- * Usage like this:
- * $settings = new SystemSettings();
- * $settings->metric->getValue();
- * $settings->description->getValue();
- */
 class SystemSettings extends \Piwik\Settings\Plugin\SystemSettings
 {
     /** @var Setting */
-    public $secretKey;
+    public $apiKey;
+
+    /** @var Setting */
+    public $chatbotId;
 
     /** @var Setting */
     public $name;
@@ -34,38 +31,66 @@ class SystemSettings extends \Piwik\Settings\Plugin\SystemSettings
 
     protected function init()
     {
-        $this->secretKey = $this->createSecretKeySetting();
-        $this->name = $this->createBrowsersSetting();
-        $this->email = $this->createDescriptionSetting();
-    }
-
-    private function createSecretKeySetting()
-    {
-        return $this->makeSetting('secretKey', $default = '', FieldConfig::TYPE_STRING, function (FieldConfig $field) {
-            $field->title = 'Secret key';
+        $this->apiKey = $this->makeSetting('apiKey', '', FieldConfig::TYPE_STRING, function (FieldConfig $field) {
+            $field->title = Piwik::translate('AskYourDatabase_ApiKey');
             $field->uiControl = FieldConfig::UI_CONTROL_PASSWORD;
-            $field->description = '';
+            $field->description = Piwik::translate('AskYourDatabase_ApiKeyDescription');
             $field->validators[] = new NotEmpty();
+            $field->transform = function ($value) {
+                return trim((string) $value);
+            };
+        });
+
+        $this->chatbotId = $this->makeSetting('chatbotId', '', FieldConfig::TYPE_STRING, function (FieldConfig $field) {
+            $field->title = Piwik::translate('AskYourDatabase_ChatbotId');
+            $field->uiControl = FieldConfig::UI_CONTROL_TEXT;
+            $field->description = Piwik::translate('AskYourDatabase_ChatbotIdDescription');
+            $field->validators[] = new NotEmpty();
+            $field->validate = function ($value) {
+                if (!preg_match('/^[A-Za-z0-9_-]+$/', self::extractChatbotId((string) $value))) {
+                    throw new \Exception(Piwik::translate('AskYourDatabase_ChatbotIdInvalid'));
+                }
+            };
+            $field->transform = function ($value) {
+                return self::extractChatbotId((string) $value);
+            };
+        });
+
+        $this->name = $this->makeSetting('name', '', FieldConfig::TYPE_STRING, function (FieldConfig $field) {
+            $field->title = Piwik::translate('AskYourDatabase_UserName');
+            $field->uiControl = FieldConfig::UI_CONTROL_TEXT;
+            $field->description = Piwik::translate('AskYourDatabase_UserNameDescription');
+        });
+
+        $this->email = $this->makeSetting('email', '', FieldConfig::TYPE_STRING, function (FieldConfig $field) {
+            $field->title = Piwik::translate('AskYourDatabase_UserEmail');
+            $field->uiControl = FieldConfig::UI_CONTROL_TEXT;
+            $field->description = Piwik::translate('AskYourDatabase_UserEmailDescription');
+            $field->validators[] = new Email();
         });
     }
 
-    private function createBrowsersSetting()
+    public function isConfigured(): bool
     {
-        return $this->makeSetting('name', $default = '', FieldConfig::TYPE_STRING, function (FieldConfig $field) {
-            $field->title = 'Name';
-            $field->uiControl = FieldConfig::UI_CONTROL_TEXT;
-            $field->description = '';
-            $field->validators[] = new NotEmpty();
-        });
+        return trim((string) $this->apiKey->getValue()) !== '' && $this->getChatbotId() !== '';
     }
 
-    private function createDescriptionSetting()
+    public function getChatbotId(): string
     {
-        return $this->makeSetting('email', $default = '', FieldConfig::TYPE_STRING, function (FieldConfig $field) {
-            $field->title = 'Email';
-            $field->uiControl = FieldConfig::UI_CONTROL_TEXT;
-            $field->description = '';
-            $field->validators[] = new NotEmpty();
-        });
+        return self::extractChatbotId((string) $this->chatbotId->getValue());
+    }
+
+    /**
+     * Accepts the chatbot ID or the chatbot URL copied from the AskYourDatabase dashboard
+     */
+    public static function extractChatbotId(string $value): string
+    {
+        $value = trim($value);
+
+        if (preg_match('~/chatbot/([A-Za-z0-9_-]+)~', $value, $matches)) {
+            return $matches[1];
+        }
+
+        return $value;
     }
 }

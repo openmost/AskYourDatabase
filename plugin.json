@@ -1,7 +1,7 @@
 {
     "name": "AskYourDatabase",
-    "description": "Connect the AskYourDatabase service to Matomo",
-    "version": "5.0.7",
+    "description": "Embed your AskYourDatabase AI chatbot in Matomo and query your database in plain language.",
+    "version": "5.0.8",
     "theme": false,
     "require": {
         "matomo": ">=5.0.0-stable,<6.0.0-b1"
@@ -9,16 +9,16 @@
     "authors": [
         {
             "name": "Openmost",
-            "email": "ronan@openmost.io",
-            "homepage": "https:\/\/openmost.io"
+            "email": "ronan@openmost.com",
+            "homepage": "https://openmost.com"
         }
     ],
     "support": {
-        "email": "ronan@openmost.io",
-        "issues": "https:\/\/github.com\/openmost\/AskYourDatabase\/issues",
-        "source": "https:\/\/github.com\/openmost\/AskYourDatabase"
+        "email": "ronan@openmost.com",
+        "issues": "https://github.com/openmost/AskYourDatabase/issues",
+        "source": "https://github.com/openmost/AskYourDatabase"
     },
-    "homepage": "https:\/\/openmost.io\/products\/askyourdatabase\/",
+    "homepage": "https://openmost.com/matomo/extensions/ask-your-database",
     "license": "GPL v3+",
     "keywords": [
         "ask",
@@ -29,5 +29,5 @@
         "artificial",
         "intelligence"
     ],
-    "category": "database"
+    "category": "integration"
 }

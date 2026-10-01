@@ -1,0 +1,39 @@
+{
+    "AskYourDatabase": {
+        "PluginDescription": "Chatta con i tuoi dati in Matomo usando il tuo chatbot IA AskYourDatabase.",
+        "ApiKey": "Chiave API",
+        "ApiKeyDescription": "Chiave API creata nella pagina API Key della tua dashboard AskYourDatabase. La chiave segreta usata dalle versioni precedenti del plugin non funziona più.",
+        "ChatbotId": "ID chatbot",
+        "ChatbotIdDescription": "ID del chatbot da visualizzare, presente nel suo URL nella tua dashboard AskYourDatabase (ad esempio https://www.askyourdatabase.com/dashboard/chatbot/5da7b8cf3a372f5e6e6b64af9ae189c7). Puoi incollare l'URL completo.",
+        "ChatbotIdInvalid": "L'ID del chatbot non è valido. Incolla l'ID o l'URL del chatbot dalla tua dashboard AskYourDatabase.",
+        "UserName": "Nome",
+        "UserNameDescription": "Nome usato per le sessioni di chat in AskYourDatabase. Lascia vuoto per usare il login dell'utente Matomo.",
+        "UserEmail": "Email",
+        "UserEmailDescription": "Email usata per le sessioni di chat in AskYourDatabase. Lascia vuoto per usare l'email dell'utente Matomo.",
+        "NotConfigured": "AskYourDatabase non è ancora configurato",
+        "NotConfiguredDescription": "Inserisci la chiave API e l'ID del chatbot del tuo account AskYourDatabase nelle impostazioni del plugin per iniziare a chattare con i tuoi dati.",
+        "NotConfiguredNoAccount": "Non hai ancora un account? Creane uno su %1$sAskYourDatabase%2$s.",
+        "GoToSettings": "Configura AskYourDatabase",
+        "SessionError": "Impossibile creare la sessione AskYourDatabase: %s",
+        "RequestFailed": "Impossibile raggiungere AskYourDatabase.",
+        "CredentialsRefused": "la chiave API o l'ID del chatbot sono stati rifiutati (%s). Verificali nelle impostazioni del plugin.",
+        "UnexpectedResponse": "AskYourDatabase ha restituito una risposta inattesa (HTTP %s).",
+        "Retry": "Riprova",
+        "Loading": "Apertura di AskYourDatabase...",
+        "ChatbotFrameTitle": "Chatbot AskYourDatabase"
+    },
+    "OpenmostCommunication": {
+        "Dismiss": "Ignora",
+        "Matomo6Title": "Matomo 6 è arrivato",
+        "Matomo6Body": "Openmost è Implementation Partner ufficiale di Matomo e lavora con Matomo dal 2016. Aggiornare ora è più semplice che recuperare tra qualche mese: le novità e i miglioramenti di sicurezza arrivano prima su Matomo 6, e vi ci portiamo con report e tracciamento intatti.",
+        "Matomo6Cta": "Pianifica il mio aggiornamento a Matomo 6",
+        "WidgetName": "Openmost: configurazione del tracciamento dei chatbot IA",
+        "AIChatbotsTitle": "Serve aiuto per configurare il tracciamento dei chatbot IA?",
+        "AIChatbotsBody": "In qualità di Implementation Partner ufficiale di Matomo, Openmost può configurare il tracciamento dei chatbot IA per voi, su Matomo On-Premise o Cloud.",
+        "AIChatbotsCta": "Richiedi la configurazione",
+        "TrackingPlanTitle": "Gli eventi devono essere configurati manualmente",
+        "TrackingPlanBody": "Gli eventi misurano clic, download, invii di moduli o riproduzioni video, se vengono tracciati. In qualità di Implementation Partner ufficiale di Matomo, Openmost progetta e implementa un piano di tracciamento adatto al vostro sito.",
+        "TrackingPlanCta": "Creare il mio piano di tracciamento",
+        "EventsEnhancedLink": "Ottenete di più dai vostri eventi con Events Enhanced"
+    }
+}

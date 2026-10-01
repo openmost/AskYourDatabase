@@ -9,25 +9,17 @@
 
 namespace Piwik\Plugins\AskYourDatabase;
 
-use Piwik\Menu\MenuAdmin;
 use Piwik\Menu\MenuTop;
+use Piwik\Piwik;
 
-/**
- * This class allows you to add, remove or rename menu items.
- * To configure a menu (such as Admin Menu, Top Menu, User Menu...) simply call the corresponding methods as
- * described in the API-Reference http://developer.piwik.org/api-reference/Piwik/Menu/MenuAbstract
- */
 class Menu extends \Piwik\Plugin\Menu
 {
     public function configureTopMenu(MenuTop $menu)
     {
-        $systemSettings = new SystemSettings();
-
-        if ($systemSettings->secretKey->getValue()
-            && $systemSettings->name->getValue()
-            && $systemSettings->email->getValue()) {
-
-            $menu->addItem('AskYourDatabase', null, $this->urlForDefaultAction(), $orderId = 30);
+        // The chatbot can read the connected database: super users only.
+        // Displayed even when not configured, the page explains how to configure it.
+        if (Piwik::hasUserSuperUserAccess()) {
+            $menu->addItem('AskYourDatabase', null, $this->urlForDefaultAction(), 30);
         }
     }
 }

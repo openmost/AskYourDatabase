@@ -9,10 +9,7 @@
 
 namespace Piwik\Plugins\AskYourDatabase;
 
-use Piwik\Archive;
-use Piwik\DataTable;
 use Piwik\Piwik;
-use Piwik\Segment;
 
 /**
  * API for plugin AskYourDatabase
@@ -21,36 +18,37 @@ use Piwik\Segment;
  */
 class API extends \Piwik\Plugin\API
 {
-    public function getIframeUrl(bool $truth = true)
+    /**
+     * Creates an AskYourDatabase chatbot session for the current user.
+     *
+     * The chatbot can read the connected database, only super users can open it.
+     *
+     * @return array{url: string} one-time URL to open in the chatbot iframe
+     */
+    public function createSession(): array
     {
         Piwik::checkUserHasSuperUserAccess();
 
-        $url = "https://www.askyourdatabase.com/api/chatbot/session";
+        $settings = new SystemSettings();
+        if (!$settings->isConfigured()) {
+            throw new \Exception(Piwik::translate('AskYourDatabase_NotConfigured'));
+        }
 
-        $systemSettings = new SystemSettings();
-        $data = [
-            "secretKey" => $systemSettings->secretKey->getValue(),
-            "name" => $systemSettings->name->getValue(),
-            "email" => $systemSettings->email->getValue(),
-        ];
+        $name = trim((string) $settings->name->getValue());
+        $email = trim((string) $settings->email->getValue());
 
-        $headers = [
-            'Content-Type' => 'application/json',
-            'Accept' => 'application/json',
-            'Accept-Language' => 'en',
-        ];
+        try {
+            $url = (new SessionClient())->createSession(
+                trim((string) $settings->apiKey->getValue()),
+                $settings->getChatbotId(),
+                $name !== '' ? $name : Piwik::getCurrentUserLogin(),
+                $email !== '' ? $email : (string) Piwik::getCurrentUserEmail()
+            );
+        } catch (\Exception $e) {
+            // not chained: the message already contains the cause, and the chain would be displayed to the user
+            throw new \Exception(Piwik::translate('AskYourDatabase_SessionError', [$e->getMessage()]));
+        }
 
-        $ch = curl_init($url);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-        curl_setopt($ch, CURLOPT_POST, 1);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data)); // Send data as JSON
-        $response = curl_exec($ch);
-
-        curl_close($ch);
-
-        return json_decode($response, true);
+        return ['url' => $url];
     }
 }

@@ -10,20 +10,22 @@
 namespace Piwik\Plugins\AskYourDatabase;
 
 use Piwik\Piwik;
+use Piwik\Url;
 
-/**
- * A controller lets you for example create a page that can be added to a menu. For more information read our guide
- * http://developer.piwik.org/guides/mvc-in-piwik or have a look at the our API references for controller and view:
- * http://developer.piwik.org/api-reference/Piwik/Plugin/Controller and
- * http://developer.piwik.org/api-reference/Piwik/View
- */
 class Controller extends \Piwik\Plugin\Controller
 {
     public function index()
     {
         Piwik::checkUserHasSuperUserAccess();
 
-        // Render the Twig template templates/index.twig and assign the view variable answerToLife to the view.
-        return $this->renderTemplate('index');
+        $settings = new SystemSettings();
+
+        return $this->renderTemplate('index', [
+            'isConfigured' => $settings->isConfigured(),
+            'settingsUrl' => 'index.php' . Url::getCurrentQueryStringWithParametersModified([
+                'module' => 'CoreAdminHome',
+                'action' => 'generalSettings',
+            ]) . '#/AskYourDatabase',
+        ]);
     }
 }

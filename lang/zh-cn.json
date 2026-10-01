@@ -1,0 +1,39 @@
+{
+    "AskYourDatabase": {
+        "PluginDescription": "使用您的 AskYourDatabase AI 聊天机器人，在 Matomo 中与您的数据对话。",
+        "ApiKey": "API 密钥",
+        "ApiKeyDescription": "在 AskYourDatabase 控制台的 API Key 页面中创建的 API 密钥。旧版插件使用的 secret key 已不再可用。",
+        "ChatbotId": "聊天机器人 ID",
+        "ChatbotIdDescription": "要显示的聊天机器人 ID，可在 AskYourDatabase 控制台中该聊天机器人的 URL 里找到 (例如 https://www.askyourdatabase.com/dashboard/chatbot/5da7b8cf3a372f5e6e6b64af9ae189c7). 您也可以直接粘贴完整 URL。",
+        "ChatbotIdInvalid": "聊天机器人 ID 无效。请粘贴 AskYourDatabase 控制台中聊天机器人的 ID 或 URL。",
+        "UserName": "名称",
+        "UserNameDescription": "在 AskYourDatabase 聊天会话中使用的名称。留空则使用 Matomo 用户的登录名。",
+        "UserEmail": "邮箱",
+        "UserEmailDescription": "在 AskYourDatabase 聊天会话中使用的邮箱。留空则使用 Matomo 用户的邮箱。",
+        "NotConfigured": "AskYourDatabase 尚未配置",
+        "NotConfiguredDescription": "请在插件设置中填写您 AskYourDatabase 账户的 API 密钥和聊天机器人 ID，即可开始与您的数据对话。",
+        "NotConfiguredNoAccount": "还没有账户？请在 %1$sAskYourDatabase%2$s 上创建一个。",
+        "GoToSettings": "配置 AskYourDatabase",
+        "SessionError": "无法创建 AskYourDatabase 会话：%s",
+        "RequestFailed": "无法连接到 AskYourDatabase。",
+        "CredentialsRefused": "API 密钥或聊天机器人 ID 被拒绝（%s）。请在插件设置中检查。",
+        "UnexpectedResponse": "AskYourDatabase 返回了意外的响应（HTTP %s）。",
+        "Retry": "重试",
+        "Loading": "正在打开 AskYourDatabase...",
+        "ChatbotFrameTitle": "AskYourDatabase 聊天机器人"
+    },
+    "OpenmostCommunication": {
+        "Dismiss": "关闭",
+        "Matomo6Title": "Matomo 6 已发布",
+        "Matomo6Body": "Openmost 是 Matomo 官方 Implementation Partner，自 2016 年起从事 Matomo 相关工作。现在升级比几个月后再追赶更简单：新功能和安全改进会优先在 Matomo 6 中推出，我们会帮您迁移到 Matomo 6，报表和跟踪数据完好无损。",
+        "Matomo6Cta": "规划我的 Matomo 6 升级",
+        "WidgetName": "Openmost：AI 聊天机器人跟踪设置",
+        "AIChatbotsTitle": "需要帮助设置 AI 聊天机器人跟踪吗？",
+        "AIChatbotsBody": "作为 Matomo 官方 Implementation Partner，Openmost 可以为您配置 AI 聊天机器人跟踪，适用于 Matomo On-Premise 或 Cloud。",
+        "AIChatbotsCta": "请人帮我配置",
+        "TrackingPlanTitle": "事件需要手动配置",
+        "TrackingPlanBody": "事件可以衡量点击、下载、表单提交或视频播放，前提是已完成跟踪配置。作为 Matomo 官方 Implementation Partner，Openmost 为您的网站设计并实施合适的跟踪方案。",
+        "TrackingPlanCta": "制定我的跟踪方案",
+        "EventsEnhancedLink": "使用 Events Enhanced 充分利用您的事件数据"
+    }
+}

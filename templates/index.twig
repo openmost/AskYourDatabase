@@ -1,42 +1,137 @@
 {% extends 'dashboard.twig' %}
 
-    {% block content %}
+{% set title %}AskYourDatabase{% endset %}
 
-        <style>
-            .top_controls {
-                display: none;
-            }
+{# the chatbot is not related to a website or a period #}
+{% block topcontrols %}{% endblock %}
 
-            #root {
-                margin-bottom: 0;
-            }
+{% block content %}
+    <style>
+        #pageFooter {
+            display: none;
+        }
 
-            #pageFooter {
-                display: none;
-            }
+        .askYourDatabaseSettingsButton {
+            margin-top: 1rem;
+        }
 
-            #ask-your-database-output {
-                margin-top: 1.125rem;
-                width: 100%;
-                height: calc(100vh - 100px);
-                max-height: calc(100vh - 100px);
-            }
-        </style>
+        .askYourDatabaseError {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-top: 1.125rem;
+        }
 
-        <iframe id="ask-your-database-output" src="" width="100%" height="800" loading="lazy">
-            Please provide credentials in the Matomo admin area
-        </iframe>
+        .askYourDatabaseFrame {
+            display: block;
+            width: 100%;
+            height: calc(100vh - 180px);
+            min-height: 480px;
+            margin-top: 1.125rem;
+            border: 0;
+            border-radius: 4px;
+        }
+    </style>
+
+    {% if not isConfigured %}
+        <div class="card">
+            <div class="card-content">
+                <h2 class="card-title">{{ 'AskYourDatabase_NotConfigured'|translate }}</h2>
+                <p>{{ 'AskYourDatabase_NotConfiguredDescription'|translate }}</p>
+                <p>{{ 'AskYourDatabase_NotConfiguredNoAccount'|translate('<a href="https://www.askyourdatabase.com/" target="_blank" rel="noreferrer noopener">', '</a>')|raw }}</p>
+                <a class="btn askYourDatabaseSettingsButton" href="{{ settingsUrl }}">{{ 'AskYourDatabase_GoToSettings'|translate }}</a>
+            </div>
+        </div>
+    {% else %}
+        <div id="askYourDatabaseError" class="alert alert-danger askYourDatabaseError" style="display: none;">
+            <span id="askYourDatabaseErrorMessage"></span>
+            <button type="button" class="btn" id="askYourDatabaseRetry">{{ 'AskYourDatabase_Retry'|translate }}</button>
+        </div>
+
+        <div id="askYourDatabaseLoading" class="loadingPiwik" style="display: none;">
+            <img src="plugins/Morpheus/images/loading-blue.gif" alt=""/> {{ 'AskYourDatabase_Loading'|translate }}
+        </div>
+
+        <iframe id="askYourDatabaseFrame" class="askYourDatabaseFrame" style="display: none;"
+                title="{{ 'AskYourDatabase_ChatbotFrameTitle'|translate }}" allow="clipboard-write"></iframe>
 
         <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                let iframe = document.getElementById('ask-your-database-output');
+            (function () {
+                var CHATBOT_ORIGIN = 'https://www.askyourdatabase.com';
+                var DEFAULT_ERROR = '{{ 'AskYourDatabase_RequestFailed'|translate|e('js') }}';
+                var frame = document.getElementById('askYourDatabaseFrame');
+                var loading = document.getElementById('askYourDatabaseLoading');
+                var errorBox = document.getElementById('askYourDatabaseError');
+                var errorMessage = document.getElementById('askYourDatabaseErrorMessage');
+                var isCreatingSession = false;
 
-                ajaxHelper.fetch({
-                    method: "AskYourDatabase.getIframeUrl",
-                })
-                .then((response) => {
-                    iframe.src = response.url;
+                function isChatbotUrl(url) {
+                    return typeof url === 'string' && url.indexOf(CHATBOT_ORIGIN + '/') === 0;
+                }
+
+                function openUrl(url) {
+                    frame.src = url;
+                    frame.style.display = 'block';
+                }
+
+                function showError(message) {
+                    errorMessage.textContent = message || DEFAULT_ERROR;
+                    errorBox.style.display = 'flex';
+                    loading.style.display = 'none';
+                    frame.style.display = 'none';
+                }
+
+                function createSession() {
+                    if (isCreatingSession) {
+                        return;
+                    }
+
+                    isCreatingSession = true;
+                    errorBox.style.display = 'none';
+                    loading.style.display = 'block';
+
+                    window.ajaxHelper.post(
+                        { method: 'AskYourDatabase.createSession' },
+                        {},
+                        { createErrorNotification: false }
+                    ).then(function (response) {
+                        if (!response || !isChatbotUrl(response.url)) {
+                            throw new Error(DEFAULT_ERROR);
+                        }
+                        openUrl(response.url);
+                    }).catch(function (error) {
+                        showError(error && error.message);
+                    }).then(function () {
+                        isCreatingSession = false;
+                    });
+                }
+
+                frame.addEventListener('load', function () {
+                    loading.style.display = 'none';
                 });
-            });
+
+                document.getElementById('askYourDatabaseRetry').addEventListener('click', createSession);
+
+                // the chatbot asks for a new session when it expires, then gives the URL to open once logged in
+                window.addEventListener('message', function (event) {
+                    if (event.origin !== CHATBOT_ORIGIN || !event.data) {
+                        return;
+                    }
+
+                    if (event.data.type === 'LOGIN_REQUIRED') {
+                        createSession();
+                    } else if (event.data.type === 'LOGIN_SUCCESS' && isChatbotUrl(event.data.url)) {
+                        openUrl(event.data.url);
+                    }
+                });
+
+                if (window.ajaxHelper) {
+                    createSession();
+                } else {
+                    document.addEventListener('DOMContentLoaded', createSession);
+                }
+            })();
         </script>
-    {% endblock %}
+    {% endif %}
+{% endblock %}

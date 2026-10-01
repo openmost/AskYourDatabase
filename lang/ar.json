@@ -1,0 +1,39 @@
+{
+    "AskYourDatabase": {
+        "PluginDescription": "تحدّث مع بياناتك في Matomo باستخدام روبوت المحادثة AskYourDatabase الخاص بك.",
+        "ApiKey": "مفتاح API",
+        "ApiKeyDescription": "مفتاح API الذي أُنشئ في صفحة API Key في لوحة معلومات AskYourDatabase. المفتاح السري الذي استخدمته الإصدارات السابقة من التطبيق لم يعد يعمل.",
+        "ChatbotId": "معرّف روبوت المحادثة",
+        "ChatbotIdDescription": "معرّف روبوت المحادثة المراد عرضه، تجده في رابطه ضمن لوحة معلومات AskYourDatabase (مثلًا https://www.askyourdatabase.com/dashboard/chatbot/5da7b8cf3a372f5e6e6b64af9ae189c7). يمكنك لصق الرابط الكامل.",
+        "ChatbotIdInvalid": "معرّف روبوت المحادثة غير صالح. الصق المعرّف أو رابط روبوت المحادثة من لوحة معلومات AskYourDatabase.",
+        "UserName": "الاسم",
+        "UserNameDescription": "الاسم المستخدم لجلسات المحادثة في AskYourDatabase. اتركه فارغًا لاستخدام اسم الدخول لمستخدم Matomo.",
+        "UserEmail": "البريد الإلكتروني",
+        "UserEmailDescription": "البريد الإلكتروني المستخدم لجلسات المحادثة في AskYourDatabase. اتركه فارغًا لاستخدام البريد الإلكتروني لمستخدم Matomo.",
+        "NotConfigured": "لم تتم تهيئة AskYourDatabase بعد",
+        "NotConfiguredDescription": "أدخل مفتاح API ومعرّف روبوت المحادثة لحساب AskYourDatabase في إعدادات التطبيق لبدء المحادثة مع بياناتك.",
+        "NotConfiguredNoAccount": "لا تملك حسابًا بعد؟ أنشئ حسابًا على %1$sAskYourDatabase%2$s.",
+        "GoToSettings": "تهيئة AskYourDatabase",
+        "SessionError": "تعذّر إنشاء جلسة AskYourDatabase: %s",
+        "RequestFailed": "تعذّر الوصول إلى AskYourDatabase.",
+        "CredentialsRefused": "تم رفض مفتاح API أو معرّف روبوت المحادثة (%s). تحقّق منهما في إعدادات التطبيق.",
+        "UnexpectedResponse": "أعاد AskYourDatabase استجابة غير متوقعة (HTTP %s).",
+        "Retry": "إعادة المحاولة",
+        "Loading": "جاري فتح AskYourDatabase...",
+        "ChatbotFrameTitle": "روبوت محادثة AskYourDatabase"
+    },
+    "OpenmostCommunication": {
+        "Dismiss": "تجاهل",
+        "Matomo6Title": "Matomo 6 متاح الآن",
+        "Matomo6Body": "Openmost شريك تنفيذ رسمي لـ Matomo (Implementation Partner) ويعمل مع Matomo منذ 2016. الترقية الآن أسهل من اللحاق بالركب بعد بضعة أشهر: تصل الميزات الجديدة وتحسينات الأمان إلى Matomo 6 أولاً، وننقلك إليه مع الحفاظ على تقاريرك والتتبع كما هي.",
+        "Matomo6Cta": "خطّط لترقيتي إلى Matomo 6",
+        "WidgetName": "Openmost: إعداد تتبع روبوتات الدردشة بالذكاء الاصطناعي",
+        "AIChatbotsTitle": "هل تحتاج إلى مساعدة في إعداد تتبع روبوتات الدردشة بالذكاء الاصطناعي؟",
+        "AIChatbotsBody": "بصفتها شريك تنفيذ رسمياً لـ Matomo (Implementation Partner)، يمكن لـ Openmost إعداد تتبع روبوتات الدردشة بالذكاء الاصطناعي نيابةً عنك، على Matomo On-Premise أو Cloud.",
+        "AIChatbotsCta": "اطلب إعداده لي",
+        "TrackingPlanTitle": "يجب إعداد الأحداث يدوياً",
+        "TrackingPlanBody": "تقيس الأحداث النقرات والتنزيلات وإرسال النماذج وتشغيل الفيديو، بشرط أن يتم تتبعها. بصفتها شريك تنفيذ رسمياً لـ Matomo (Implementation Partner)، تصمم Openmost خطة تتبع مناسبة لموقعك وتنفذها.",
+        "TrackingPlanCta": "أنشئ خطة التتبع الخاصة بي",
+        "EventsEnhancedLink": "استفد أكثر من أحداثك مع Events Enhanced"
+    }
+}
