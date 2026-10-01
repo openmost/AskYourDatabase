@@ -1,0 +1,36 @@
+{
+    "AskYourDatabase": {
+        "PluginDescription": "Chat met uw data in Matomo via uw AI-chatbot van AskYourDatabase.",
+        "ApiKey": "API-sleutel",
+        "ApiKeyDescription": "API-sleutel aangemaakt op de pagina API Key van uw AskYourDatabase-dashboard. De geheime sleutel die door eerdere versies van de plugin werd gebruikt, werkt niet meer.",
+        "ChatbotId": "Chatbot-ID",
+        "ChatbotIdDescription": "ID van de weer te geven chatbot, te vinden in de URL ervan in uw AskYourDatabase-dashboard (bijvoorbeeld https://www.askyourdatabase.com/dashboard/chatbot/5da7b8cf3a372f5e6e6b64af9ae189c7). U kunt de volledige URL plakken.",
+        "ChatbotIdInvalid": "De chatbot-ID is niet geldig. Plak de ID of de URL van de chatbot uit uw AskYourDatabase-dashboard.",
+        "UserName": "Naam",
+        "UserNameDescription": "Naam die wordt gebruikt voor de chatsessies in AskYourDatabase. Laat leeg om de login van de Matomo-gebruiker te gebruiken.",
+        "UserEmail": "E-mailadres",
+        "UserEmailDescription": "E-mailadres dat wordt gebruikt voor de chatsessies in AskYourDatabase. Laat leeg om het e-mailadres van de Matomo-gebruiker te gebruiken.",
+        "NotConfigured": "AskYourDatabase is nog niet geconfigureerd",
+        "NotConfiguredDescription": "Voer de API-sleutel en de chatbot-ID van uw AskYourDatabase-account in bij de plugininstellingen om met uw data te chatten.",
+        "NotConfiguredNoAccount": "Nog geen account? Maak er een aan op %1$sAskYourDatabase%2$s.",
+        "GoToSettings": "AskYourDatabase configureren",
+        "SessionError": "De AskYourDatabase-sessie kon niet worden aangemaakt: %s",
+        "RequestFailed": "AskYourDatabase kon niet worden bereikt.",
+        "CredentialsRefused": "de API-sleutel of de chatbot-ID is geweigerd (%s). Controleer ze in de plugininstellingen.",
+        "UnexpectedResponse": "AskYourDatabase gaf een onverwacht antwoord terug (HTTP %s).",
+        "Retry": "Opnieuw proberen",
+        "Loading": "AskYourDatabase openen...",
+        "ChatbotFrameTitle": "AskYourDatabase-chatbot"
+    },
+    "OpenmostCommunication": {
+        "Dismiss": "Sluiten",
+        "WidgetName": "Openmost: instellen van AI-chatbottracking",
+        "AIChatbotsTitle": "Hulp nodig bij het instellen van AI-chatbottracking?",
+        "AIChatbotsBody": "Als officieel Matomo Implementation Partner kan Openmost AI-chatbottracking voor u instellen, op Matomo On-Premise of Cloud.",
+        "AIChatbotsCta": "Laat het voor mij instellen",
+        "TrackingPlanTitle": "Gebeurtenissen moeten handmatig worden ingesteld",
+        "TrackingPlanBody": "Gebeurtenissen meten klikken, downloads, formulierverzendingen of videoweergaven, zodra ze worden gemeten. Als officieel Matomo Implementation Partner ontwerpt en implementeert Openmost een trackingplan dat bij uw site past.",
+        "TrackingPlanCta": "Mijn trackingplan opstellen",
+        "EventsEnhancedLink": "Haal meer uit uw gebeurtenissen met Events Enhanced"
+    }
+}

@@ -43,7 +43,7 @@ Create an account on [AskYourDatabase](https://www.askyourdatabase.com/), connec
 
 __How can I contribute to this plugin?__
 
-Issues and pull requests are welcome on [GitHub](https://github.com/openmost/AskYourDatabase). You can also contact us through [openmost.com](https://openmost.com).
+Issues and pull requests are welcome on [GitHub](https://github.com/openmost/AskYourDatabase). You can also contact us at ronan@openmost.com.
 
 __How long will this plugin be maintained?__
 

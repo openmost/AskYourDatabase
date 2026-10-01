@@ -1,0 +1,36 @@
+{
+    "AskYourDatabase": {
+        "PluginDescription": "Chatten Sie in Matomo mit Ihren Daten über Ihren KI-Chatbot von AskYourDatabase.",
+        "ApiKey": "API-Schlüssel",
+        "ApiKeyDescription": "API-Schlüssel, erstellt auf der Seite API Key Ihres AskYourDatabase-Dashboards. Der von früheren Versionen des Plugins verwendete geheime Schlüssel funktioniert nicht mehr.",
+        "ChatbotId": "Chatbot-ID",
+        "ChatbotIdDescription": "ID des anzuzeigenden Chatbots, zu finden in seiner URL in Ihrem AskYourDatabase-Dashboard (zum Beispiel https://www.askyourdatabase.com/dashboard/chatbot/5da7b8cf3a372f5e6e6b64af9ae189c7). Sie können die vollständige URL einfügen.",
+        "ChatbotIdInvalid": "Die Chatbot-ID ist ungültig. Fügen Sie die ID oder die URL des Chatbots aus Ihrem AskYourDatabase-Dashboard ein.",
+        "UserName": "Name",
+        "UserNameDescription": "Name für die Chat-Sitzungen in AskYourDatabase. Leer lassen, um den Login des Matomo-Benutzers zu verwenden.",
+        "UserEmail": "E-Mail",
+        "UserEmailDescription": "E-Mail-Adresse für die Chat-Sitzungen in AskYourDatabase. Leer lassen, um die E-Mail-Adresse des Matomo-Benutzers zu verwenden.",
+        "NotConfigured": "AskYourDatabase ist noch nicht konfiguriert",
+        "NotConfiguredDescription": "Geben Sie in den Plugin-Einstellungen den API-Schlüssel und die Chatbot-ID Ihres AskYourDatabase-Kontos ein, um mit Ihren Daten zu chatten.",
+        "NotConfiguredNoAccount": "Noch kein Konto? Erstellen Sie eines bei %1$sAskYourDatabase%2$s.",
+        "GoToSettings": "AskYourDatabase konfigurieren",
+        "SessionError": "Die AskYourDatabase-Sitzung konnte nicht erstellt werden: %s",
+        "RequestFailed": "AskYourDatabase ist nicht erreichbar.",
+        "CredentialsRefused": "der API-Schlüssel oder die Chatbot-ID wurde abgelehnt (%s). Prüfen Sie beide in den Plugin-Einstellungen.",
+        "UnexpectedResponse": "AskYourDatabase hat eine unerwartete Antwort geliefert (HTTP %s).",
+        "Retry": "Erneut versuchen",
+        "Loading": "AskYourDatabase wird geöffnet...",
+        "ChatbotFrameTitle": "AskYourDatabase-Chatbot"
+    },
+    "OpenmostCommunication": {
+        "Dismiss": "Ausblenden",
+        "WidgetName": "Openmost: Einrichtung des KI-Chatbot-Trackings",
+        "AIChatbotsTitle": "Brauchen Sie Hilfe beim Einrichten des KI-Chatbot-Trackings?",
+        "AIChatbotsBody": "Als offizieller Matomo Implementation Partner richtet Openmost das KI-Chatbot-Tracking für Sie ein, auf Matomo On-Premise oder Cloud.",
+        "AIChatbotsCta": "Tracking einrichten lassen",
+        "TrackingPlanTitle": "Ereignisse müssen manuell eingerichtet werden",
+        "TrackingPlanBody": "Ereignisse messen Klicks, Downloads, Formularübermittlungen oder Videowiedergaben, sobald sie erfasst werden. Als offizieller Matomo Implementation Partner konzipiert und setzt Openmost einen Tracking-Plan um, der zu Ihrer Website passt.",
+        "TrackingPlanCta": "Meinen Tracking-Plan erstellen",
+        "EventsEnhancedLink": "Holen Sie mit Events Enhanced mehr aus Ihren Ereignissen heraus"
+    }
+}

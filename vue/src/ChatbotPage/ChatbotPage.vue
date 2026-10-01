@@ -13,7 +13,7 @@
     >
       <p>{{ translate('AskYourDatabase_NotConfiguredDescription') }}</p>
       <p v-html="$sanitize(noAccountText)" />
-      <a class="btn" :href="settingsUrl">{{ translate('AskYourDatabase_GoToSettings') }}</a>
+      <a class="btn askYourDatabaseSettingsButton" :href="settingsUrl">{{ translate('AskYourDatabase_GoToSettings') }}</a>
     </ContentBlock>
 
     <div v-else class="askYourDatabaseChatbot">
@@ -152,6 +152,10 @@ export default defineComponent({
 </script>
 
 <style lang="less">
+.askYourDatabaseSettingsButton {
+  margin-top: 1rem;
+}
+
 .askYourDatabaseChatbot {
   .askYourDatabaseError {
     display: flex;

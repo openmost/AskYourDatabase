@@ -1,0 +1,36 @@
+{
+    "AskYourDatabase": {
+        "PluginDescription": "在 Matomo 中透過你的 AskYourDatabase AI 聊天機器人與資料對話。",
+        "ApiKey": "API 金鑰",
+        "ApiKeyDescription": "在 AskYourDatabase 控制台的 API Key 頁面中建立的 API 金鑰。舊版外掛使用的密鑰已無法使用。",
+        "ChatbotId": "聊天機器人 ID",
+        "ChatbotIdDescription": "要顯示的聊天機器人 ID，可在 AskYourDatabase 控制台中該聊天機器人的網址找到 (例如 https://www.askyourdatabase.com/dashboard/chatbot/5da7b8cf3a372f5e6e6b64af9ae189c7). 你也可以直接貼上完整網址。",
+        "ChatbotIdInvalid": "聊天機器人 ID 無效。請從 AskYourDatabase 控制台貼上聊天機器人的 ID 或網址。",
+        "UserName": "名稱",
+        "UserNameDescription": "在 AskYourDatabase 聊天工作階段中使用的名稱。留空則使用 Matomo 使用者的登入帳號。",
+        "UserEmail": "電子郵件",
+        "UserEmailDescription": "在 AskYourDatabase 聊天工作階段中使用的電子郵件。留空則使用 Matomo 使用者的電子郵件。",
+        "NotConfigured": "尚未設定 AskYourDatabase",
+        "NotConfiguredDescription": "請在外掛設定中輸入你的 AskYourDatabase 帳戶的 API 金鑰與聊天機器人 ID，即可開始與你的資料對話。",
+        "NotConfiguredNoAccount": "還沒有帳戶嗎？請在 %1$sAskYourDatabase%2$s 建立一個。",
+        "GoToSettings": "設定 AskYourDatabase",
+        "SessionError": "無法建立 AskYourDatabase 工作階段：%s",
+        "RequestFailed": "無法連線至 AskYourDatabase。",
+        "CredentialsRefused": "API 金鑰或聊天機器人 ID 遭到拒絕（%s）。請在外掛設定中確認。",
+        "UnexpectedResponse": "AskYourDatabase 回傳了非預期的回應（HTTP %s）。",
+        "Retry": "重試",
+        "Loading": "正在開啟 AskYourDatabase...",
+        "ChatbotFrameTitle": "AskYourDatabase 聊天機器人"
+    },
+    "OpenmostCommunication": {
+        "Dismiss": "關閉",
+        "WidgetName": "Openmost：AI 聊天機器人追蹤設定",
+        "AIChatbotsTitle": "需要協助設定 AI 聊天機器人追蹤嗎？",
+        "AIChatbotsBody": "作為 Matomo 官方 Implementation Partner，Openmost 可以替你設定 AI 聊天機器人追蹤，適用於 Matomo On-Premise 或 Cloud。",
+        "AIChatbotsCta": "請人幫我設定",
+        "TrackingPlanTitle": "事件需要手動設定",
+        "TrackingPlanBody": "事件可以衡量點擊、下載、表單送出或影片播放，前提是已完成追蹤設定。作為 Matomo 官方 Implementation Partner，Openmost 為你的網站設計並實作合適的追蹤計畫。",
+        "TrackingPlanCta": "建立我的追蹤計畫",
+        "EventsEnhancedLink": "使用 Events Enhanced 充分運用你的事件資料"
+    }
+}
