@@ -8,7 +8,7 @@
 - When the chatbot cannot be opened, the page shows the translated reason and a Retry button instead of a blank iframe, and a setup guide until the plugin is configured
 - The menu is displayed to super users only, also before the configuration. API method `AskYourDatabase.getIframeUrl` replaced by `AskYourDatabase.createSession`
 - Translated into 12 languages
-- Requires Matomo 5.0.0 or later (`>=5.0.0,<6.0.0-b1`): the Openmost banner styles fall back to the Matomo light theme colors when the theme color variables of Matomo 5.10.0 are not available.
+- Requires Matomo 5.0.0 or later (`>=5.0.0,<6.0.0-b1`).
 
 ### v5.0.7
 
