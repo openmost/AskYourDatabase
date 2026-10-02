@@ -14,7 +14,7 @@ Chat with your data inside Matomo: embed your AskYourDatabase AI chatbot and que
 
 ## Requirements
 
-- Matomo 5.10.0 or later, below 6.0.0
+- Matomo 5.0.0 or later, below 6.0.0
 - An [AskYourDatabase](https://www.askyourdatabase.com/) account with a chatbot connected to your database, and an API key
 - Outgoing HTTPS requests from your Matomo server to `www.askyourdatabase.com`
 
