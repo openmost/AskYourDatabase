@@ -3,6 +3,7 @@
 ### v6.0.1
 
 - Translations: the plugin is now available in 12 languages (Arabic, Chinese simplified and traditional, Dutch, English, French, German, Italian, Japanese, Polish, Portuguese, Spanish)
+- README: the plugin description now shows in the Description tab of the Matomo Marketplace.
 
 ### v6.0.0
 
