@@ -9,6 +9,7 @@
 - The menu is displayed to super users only, also before the configuration. API method `AskYourDatabase.getIframeUrl` replaced by `AskYourDatabase.createSession`
 - Translated into 12 languages
 - Requires Matomo 5.0.0 or later (`>=5.0.0,<6.0.0-b1`).
+- README: the plugin description now shows in the Description tab of the Matomo Marketplace.
 
 ### v5.0.7
 
