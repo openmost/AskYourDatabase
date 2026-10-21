@@ -1,5 +1,9 @@
 ## Changelog
 
+### v5.0.9
+
+- Request parameters are read with `Piwik\Request` instead of the deprecated `Common::getRequestVar`, ready for the next Matomo versions.
+
 ### v5.0.8
 
 - Update the plugin homepage (https://openmost.com/matomo/extensions/ask-your-database), the support email and the Marketplace category

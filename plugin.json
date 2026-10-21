@@ -1,7 +1,7 @@
 {
     "name": "AskYourDatabase",
     "description": "Embed your AskYourDatabase AI chatbot in Matomo and query your database in plain language.",
-    "version": "5.0.8",
+    "version": "5.0.9",
     "theme": false,
     "require": {
         "matomo": ">=5.0.0,<6.0.0-b1"
